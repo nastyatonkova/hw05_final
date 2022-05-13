@@ -133,7 +133,9 @@ dmypy.json
 .DS_Store
 .AppleDouble
 .LSOverride
-
+static/
+yatube/static
+yatube/media
 *.sublime-project
 *.sublime-workspace
 
@@ -144,9 +146,3 @@ dmypy.json
 .history/
 
 .mypy_cache
-
-# папки со статикой и медиа
-static/
-yatube/posts/static/
-yatube/media/
-

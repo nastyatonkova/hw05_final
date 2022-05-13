@@ -1,0 +1,11 @@
+{% comment %}
+  Использованы классы бустрапа:
+  border-top: создаёт тонкую линию сверху блока
+  text-center: выравнивает текстовые блоки внутри блока по центру
+  py-3: контент внутри размещается с отступом сверху и снизу
+  тег span используется для добавления нужных стилей отдельным участкам текста
+  {{ year }} {% now "Y" %} not working? 
+{% endcomment %}       
+<footer class="border-top text-center py-3">
+  <p>© {{ year }} Copyright <span style="color:red">Ya</span>tube</p>    
+</footer>
