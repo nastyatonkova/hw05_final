@@ -5,6 +5,7 @@ from http import HTTPStatus
 from django import forms
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.core.cache import cache
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import Client, TestCase, override_settings
 from django.urls import reverse
@@ -62,6 +63,7 @@ class PostPagesTests(TestCase):
 
     def test_pages_uses_correct_template(self):
         """URL-adress uses correct HTML-template."""
+        cache.clear()
         templates_pages_names = {
             'posts/index.html': reverse('posts:index'),
             'posts/group_list.html': (
@@ -90,6 +92,7 @@ class PostPagesTests(TestCase):
 
     def test_post_show_picture(self):
         """Check the image."""
+        cache.clear()
         templates_pages_names = {
             reverse('posts:index'): self.post.image,
             reverse('posts:group_list',
@@ -177,6 +180,7 @@ class PostPagesTests(TestCase):
 
     def test_post_show_correct_text(self):
         """Additional check of first post text appering in the right group."""
+        cache.clear()
         templates_pages_names = {
             reverse('posts:index'): self.post.text,
             reverse('posts:group_list',
@@ -192,6 +196,7 @@ class PostPagesTests(TestCase):
 
     def test_post_show_correct_post_id(self):
         """Checking id of first post and appering in the right group."""
+        cache.clear()
         templates_pages_names = {
             reverse('posts:index'): self.post.id,
             reverse('posts:group_list',
@@ -241,6 +246,7 @@ class PaginatorViewsTest(TestCase):
         )
 
     def test_first_page_contains_ten_records(self):
+        cache.clear()
         templates_pages_names = {
             reverse('posts:index'): settings.POSTS_IN_PAGINATOR,
             reverse('posts:group_list',

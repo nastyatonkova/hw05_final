@@ -1,6 +1,7 @@
 from http import HTTPStatus
 
 from django.contrib.auth import get_user_model
+from django.core.cache import cache
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -64,6 +65,7 @@ class PostURLTests(TestCase):
 
     def test_urls_uses_correct_template(self):
         """URL-adress using correct HTML templates."""
+        cache.clear()
         templates_url_names = {
             'posts/index.html': '/',
             'posts/post_detail.html': f'/posts/{self.post.id}/',

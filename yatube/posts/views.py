@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.cache import cache_page
 
 from .forms import CommentForm, PostForm
 from .models import Comment, Follow, Group, Post, User
@@ -23,6 +24,7 @@ def page_maker(post_list, request):
     return paginator.get_page(page_number)
 
 
+@cache_page(settings.CACHING_TIME)
 def index(request):
     """Returns main page."""
     template = PATH_TO_INDEX
@@ -137,7 +139,7 @@ def follow_index(request):
     """Returns follow page."""
     template = PATH_TO_FOLLOW
     post_list = Post.objects.filter(author__following__user=request.user)
-    title = 'Page to follow author'
+    title = 'Страница подписки на автора'
     context = {
         'title': title,
         'page_obj': page_maker(request=request, post_list=post_list),

@@ -146,3 +146,6 @@ yatube/media
 .history/
 
 .mypy_cache
+
+# tmp files
+tmp*
