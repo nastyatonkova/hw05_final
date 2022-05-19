@@ -1,11 +1,57 @@
 {% extends "base.html" %}
 {% block title %}Об авторе проекта{% endblock %}
+{% block header %}{% endblock %}
+{% load static %}
 {% block content %}
-  <h1>Привет, я Анастасия Тонкова</h1>
-  <p>
-    Мне 28 лет и это мой первый проект. 
-  </p>
-  <p>
-    Скоро добавлю и картинки!
-  </p>
+<div class="row" >
+  <div class="col-md-3 mb-3 mt-1">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="h3">
+                Об авторе
+              </div>
+            </li>
+            <li class="list-group-item">
+              <img class="w-75 mx-auto d-flex" src="{% static 'img/author_photo.jpg'%}" >
+              <div class="h6 text-center">
+                Фото с любимых Канар! Путешествуйте!
+                <span>&#128521</span> 
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+        <div class="card-text">
+          <p class="text-justify">Всем привет! Меня зовут <b>Настя Тонкова</b>, учусь на Яндекс.Практикуме и хочу стать 
+          <b style="color: #306998">Pyt</b><b style="color: #FFD43B">hon</b> разработчиком.
+            <span>&#128513</span><br>
+            </b>Мне 28 лет, живу во Франкфурте, по образованию экономист и работаю менеджером в VW в логистике, занимаюсь заправочными картами и транспордерами по Европе.<br></p>
+          <p class="text-justify">
+            Обожаю путешествия и являюсь ярым настольщиком. Мечтаю о мире во всем мире и открытых границах!!! <span>&#128519</span><span>&#128591</span>
+          </p>
+          <p style="color: lightseagreen" class="text-center"><b>
+            <br>С любимыми не расставайтесь,</br>
+            <br>С любимыми не расставайтесь,</br>
+            <br>С любимыми не расставайтесь,</br>
+            <br>Всей кровью прорастайте в них,-</br>
+            <br>И каждый раз навек прощайтесь!</br>
+            <br>И каждый раз навек прощайтесь!</br>
+            <br>И каждый раз навек прощайтесь!</br>
+            <br>Когда уходите на миг.</br>
+            <br>Александр Кочетков, 1932 г.</br>
+          <img class="w-75 mx-auto d-flex" src="{% static 'img/family_author.jpg'%}">
+          <ul>
+            Мои контакты:
+            <li><a href="https://github.com/nastyatonkova"><b>Github</b></a> Пока весьма скромный</li>
+            <li><a href="https://www.instagram.com/nastya_tonkova/"><b>Instagram</b></a> Фоточки, нужно больше фоточек.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
