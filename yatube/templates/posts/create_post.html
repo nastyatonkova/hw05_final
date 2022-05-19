@@ -2,7 +2,7 @@
 {% block title %}
   {% if is_edit %}Редактировать запись{% else %}Новая запись{% endif %} запись{% endblock title %}
 {% block content %}
-{% load thumbnail %}
+  {% load thumbnail %}
   {% load user_filters %}
   <div class="row justify-content-center">
     <div class="col-md-8 p-5">
@@ -14,7 +14,7 @@
           {{ text }}
           {% if form.errors %}
             {% for field in form %}
-              {% for error in field.errors %}            
+              {% for error in field.errors %}
                 <div class="alert alert-danger">
                   {{ error|escape }}
                 </div>
@@ -27,7 +27,7 @@
             {% endfor %}
           {% endif %}
 
-          <form  method="post" enctype="multipart/form-data">  
+          <form  method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             {% for field in form %}

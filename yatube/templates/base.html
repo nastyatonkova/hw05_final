@@ -1,6 +1,6 @@
-<!DOCTYPE html> {% comment %} Используется html 5 версии {% endcomment %} 
-<html lang="ru"> {% comment %} Язык сайта - русский {% endcomment %}  
-{% load static %}
+<!DOCTYPE html> {% comment %} Используется html 5 версии {% endcomment %}
+<html lang="ru"> {% comment %} Язык сайта - русский {% endcomment %}
+  {% load static %}
   <head>
     {% comment %} Кодировка сайта {% endcomment %}
     <meta charset="utf-8">
@@ -26,11 +26,11 @@
   </head>
   <body>
     {% include 'includes/header.html' %}
-      <main> 
-        {% block content %}
-          Here should be content
-        {% endblock %}
-      </main>      
+    <main>
+      {% block content %}
+        Here should be content
+      {% endblock %}
+    </main>
     {% include 'includes/footer.html' %}
   </body>
 </html>

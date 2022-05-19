@@ -6,21 +6,21 @@
   <nav aria-label="Page navigation" class="my-5">
     <ul class="pagination justify-content-center"">
       {% if page_obj.has_previous %}
-          <li class="page-item"><a class="page-link" href="?page=1">Первая</a></li>
-          <li class="page-item">
+        <li class="page-item"><a class="page-link" href="?page=1">Первая</a></li>
+        <li class="page-item">
           <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
             Предыдущая
           </a>
-          </li>
+        </li>
       {% endif %}
       {% for i in page_obj.paginator.page_range %}
         {% if page_obj.number == i %}
           <li class="page-item active">
-          <span class="page-link">{{ i }}</span>
+            <span class="page-link">{{ i }}</span>
           </li>
         {% else %}
           <li class="page-item">
-          <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
           </li>
         {% endif %}
       {% endfor %}
@@ -35,7 +35,7 @@
             Последняя
           </a>
         </li>
-      {% endif %}    
+      {% endif %}
     </ul>
-  </nav>
+    </nav>
 {% endif %}
