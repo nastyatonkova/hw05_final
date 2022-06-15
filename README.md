@@ -18,7 +18,7 @@ Clone repository to you PC and go to it with your terminal using CD command:
 git clone https://github.com/chaplinskiy/hw05_final.git
 ```
 
-Create and activete virtual environment:
+Create and activate virtual environment:
 
 ```bash
 python3 -m venv venv
