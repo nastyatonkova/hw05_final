@@ -58,11 +58,11 @@ pytest
 ```
 
 ### Template file for env
-см.
+see
 ```bash
 .env.template
 ```
 
 
-## Другие проекты автора:
+## Other projects of the author:
 https://github.com/nastyatonkova/
